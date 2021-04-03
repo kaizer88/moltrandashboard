@@ -14,8 +14,8 @@ from django.db import models
 #     def __str__(self):
 #         return self.name
 
-class User(AbstractUser):
-  roles = models.ManyToManyField(Role)
+# class User(AbstractUser):
+#   roles = models.ManyToManyField(Role)
 
 class Profile(AbstractUser):
     user = models.OneToOneField(User, on_delete=models.CASCADE, null = True, blank = True,default=None)
