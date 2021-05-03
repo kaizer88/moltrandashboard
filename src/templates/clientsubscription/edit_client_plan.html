@@ -27,7 +27,12 @@
                         {% bootstrap_field form.last_name %}
                         {% bootstrap_field form.cell_number %}
                         {% bootstrap_field form.plan %}
-                        {% bootstrap_field form.start_date %}
+<!--                        {% bootstrap_field form.start_date %}-->
+                        <label>Default Functionality</label>
+                        <div class="input-group">
+                            <input type="text" name="start_date" class="form-control" placeholder="mm/dd/yyyy" id="datepicker">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                        </div><br />
                         <div class="form-group">
                             <div class="col-lg-offset-2 col-lg-10">
                                 <button class="btn btn-success waves-effect waves-light" type="submit">Save</button>
