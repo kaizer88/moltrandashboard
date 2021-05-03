@@ -58,6 +58,7 @@
 <!-- Todo -->
 <script src="{% static 'js/jquery.todo.js' %}"></script>
 
+<script src="{% static 'assets/timepicker/bootstrap-datepicker.js' %}"></script>
 <script>
     var resizefunc = [];
 </script>
@@ -73,5 +74,6 @@
             delay: 100,
             time: 1200
         });
+        jQuery('#datepicker').datepicker();
     });
 </script>

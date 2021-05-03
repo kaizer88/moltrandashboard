@@ -33,6 +33,7 @@ def edit_client(request, id= None):
             client.save()
             messages.success(request, 'client created')
 
+
         else:
             client = client_form.save(commit=False)
             client.save()
@@ -52,9 +53,9 @@ def edit_client_plan(request, id= None):
     context = {}
     if id:
         client = Client.objects.get(pk=id)
-        client_form = ClientForm(request.POST or None, instance=client)
+        client_form = ClientPlanForm(request.POST or None, instance=client)
     else:
-        client_form = ClientForm(request.POST or None, auto_id=False)
+        client_form = ClientPlanForm(request.POST or None, auto_id=False)
 
     if client_form.is_valid():
         if not id:
