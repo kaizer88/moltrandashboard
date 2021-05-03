@@ -11,10 +11,10 @@ import json
 @login_required()
 def apidemo(request):
     context = {}
-    response = requests.get('https://reqres.in/api/users')
-    geodata = response.json()
-    data = geodata['data']
-    context['data'] = data
+    # response = requests.get('https://reqres.in/api/users')
+    # geodata = response.json()
+    # data = geodata['data']
+    # context['data'] = data
     # return render(request, 'core/home.html', {
     #     'ip': geodata['ip'],
     #     'country': geodata['country_name']
