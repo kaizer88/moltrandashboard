@@ -2,12 +2,14 @@ from django.db import models
 from lib.models import BaseModel
 # Create your models here.
 
+
 class Country(models.Model):
     name = models.CharField(max_length=255, unique=True, null=False, blank=False)
     code = models.CharField(max_length=5, unique=True, null=False, blank=False)
 
     def __str__(self):
         return self.code
+
 
 class Province(models.Model):
     name = models.CharField(max_length=255, unique=True, null=False, blank=False)
@@ -16,6 +18,7 @@ class Province(models.Model):
 
     def __str__(self):
         return self.name
+
 
 class Town(models.Model):
     name = models.CharField(max_length=255, unique=True, null=False, blank=False)
@@ -34,6 +37,7 @@ class Property(BaseModel):
     def __str__(self):
         return self.code
 
+
 class Address(models.Model):
 
     property = models.ForeignKey(
@@ -48,6 +52,7 @@ class Address(models.Model):
     def __str__(self):
         return self.address_line_one
 
+
 class Tenant(BaseModel):
     first_name = models.CharField(max_length=255, unique=True, null=False, blank=False)
     last_name = models.CharField(max_length=255, unique=True, null=False, blank=False)
@@ -61,6 +66,7 @@ class Tenant(BaseModel):
 
     def __str__(self):
         return self.first_name
+
 
 class Agent(BaseModel):
     first_name = models.CharField(max_length=255, unique=True, null=False, blank=False)
@@ -83,5 +89,6 @@ class Profile(models.Model):
     initials = models.CharField(max_length=150, null=False, blank=False)
     age = models.IntegerField(null=False, blank=False)
     date_of_birth = models.CharField(max_length=150, null=False, blank=False)
+
     def __str__(self):
         return self.name
